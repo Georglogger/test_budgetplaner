@@ -1,11 +1,20 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { darkMode, toggleDarkMode } from './darkMode';
   import ViewModeSwitch from './ViewModeSwitch.svelte';
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <header class="top-header">
   <div class="header-left">
-    <button class="back-btn">
+    <button class="mobile-menu-btn" on:click={() => dispatch('toggleSidebar')}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <button class="back-btn desktop-only">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" fill="none"/>
       </svg>
@@ -66,14 +75,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.5rem;
-    gap: 2rem;
+    padding: 0 1rem;
+    gap: 1rem;
     position: fixed;
     top: 0;
-    left: 200px;
+    left: 0;
     right: 0;
     z-index: 10;
     transition: all 0.3s ease;
+  }
+
+  @media (min-width: 1024px) {
+    .top-header {
+      left: 200px;
+      padding: 0 1.5rem;
+      gap: 2rem;
+    }
   }
 
   :global(.dark) .top-header {
@@ -132,6 +149,13 @@
   .header-center {
     flex: 1;
     max-width: 600px;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-center {
+      display: block;
+    }
   }
 
   .search-btn {
@@ -222,5 +246,48 @@
   :global(.dark) .icon-btn:hover {
     background: #1e293b;
     color: #e2e8f0;
+  }
+
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.15s ease;
+  }
+
+  .mobile-menu-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+  }
+
+  :global(.dark) .mobile-menu-btn {
+    color: #94a3b8;
+  }
+
+  :global(.dark) .mobile-menu-btn:hover {
+    background: #1e293b;
+    color: #e2e8f0;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu-btn {
+      display: none;
+    }
+  }
+
+  /* Desktop only elements */
+  .desktop-only {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .desktop-only {
+      display: flex;
+    }
   }
 </style>

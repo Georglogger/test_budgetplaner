@@ -10,6 +10,15 @@
   import TopHeader from './lib/TopHeader.svelte';
 
   let currentRoute = { component: BudgetOverview, props: {}, name: 'planning' };
+  let sidebarOpen = false;
+
+  function toggleSidebar() {
+    sidebarOpen = !sidebarOpen;
+  }
+
+  function closeSidebar() {
+    sidebarOpen = false;
+  }
 
   function parseHash() {
     const hash = window.location.hash.slice(1) || '/';
@@ -52,9 +61,15 @@
 </script>
 
 <div class="flex min-h-screen bg-gray-50 dark:bg-slate-900">
-  <Sidebar currentRoute={currentRoute.name} />
-  <div class="flex-1 flex flex-col ml-[200px]">
-    <TopHeader />
+  <Sidebar currentRoute={currentRoute.name} {sidebarOpen} on:closeSidebar={closeSidebar} />
+
+  <!-- Mobile Overlay -->
+  {#if sidebarOpen}
+    <div class="mobile-overlay" on:click={closeSidebar}></div>
+  {/if}
+
+  <div class="flex-1 flex flex-col ml-0 lg:ml-[200px]">
+    <TopHeader on:toggleSidebar={toggleSidebar} />
     <main class="flex-1 w-full mt-16 min-h-[calc(100vh-64px)]">
       <svelte:component this={currentRoute.component} {...currentRoute.props} />
     </main>
@@ -90,5 +105,20 @@
   /* Main element padding for non-page-container routes */
   main:not(:has(.page-container)) :global(.container) {
     padding: 2rem;
+  }
+
+  /* Mobile Overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+
+  @media (max-width: 1023px) {
+    .mobile-overlay {
+      display: block;
+    }
   }
 </style>

@@ -1,0 +1,141 @@
+<html lang="en" class="">
+<link type="text/css" id="dark-mode" rel="stylesheet" href="">
+<style type="text/css" id="dark-mode-сustom-style"></style>
+<style type="text/css" id="dark-mode-theme-changer-style"></style>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+    <script type="module" crossorigin="" src="/assets/index-BbQK0_5J.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-BToyDbhB.css">
+</head>
+
+<body class="">
+    <div id="app">
+        <div class="flex min-h-screen bg-gray-50 dark:bg-slate-900">
+            <aside class="sidebar svelte-1nhzsi7">
+                <div class="sidebar-content svelte-1nhzsi7"><a href="#/" class="menu-item svelte-1nhzsi7 active"><span
+                            class="menu-icon svelte-1nhzsi7">📊</span> <span
+                            class="menu-label svelte-1nhzsi7">Planung</span> <!----></a> <!----><a href="#/transactions"
+                        class="menu-item svelte-1nhzsi7"><span class="menu-icon svelte-1nhzsi7">📝</span> <span
+                            class="menu-label svelte-1nhzsi7">Transaktionen</span> <!----></a> <!----><a
+                        href="#/personal" class="menu-item svelte-1nhzsi7"><span
+                            class="menu-icon svelte-1nhzsi7">👥</span> <span
+                            class="menu-label svelte-1nhzsi7">Personal</span> <svg width="12" height="12"
+                            viewBox="0 0 12 12" class="menu-arrow svelte-1nhzsi7">
+                            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" fill="none"></path>
+                        </svg><!----></a> <!----><a href="#/contracts" class="menu-item svelte-1nhzsi7"><span
+                            class="menu-icon svelte-1nhzsi7">📄</span> <span
+                            class="menu-label svelte-1nhzsi7">Verträge</span> <!----></a> <!----><a href="#/reports"
+                        class="menu-item svelte-1nhzsi7"><span class="menu-icon svelte-1nhzsi7">📈</span> <span
+                            class="menu-label svelte-1nhzsi7">Berichte</span> <!----></a> <!----><a href="#/categories"
+                        class="menu-item svelte-1nhzsi7"><span class="menu-icon svelte-1nhzsi7">🏷️</span> <span
+                            class="menu-label svelte-1nhzsi7">Kategorien</span> <!----></a> <!----><a
+                        href="#/consolidation" class="menu-item svelte-1nhzsi7"><span
+                            class="menu-icon svelte-1nhzsi7">📊</span> <span
+                            class="menu-label svelte-1nhzsi7">Konsolidierung</span> <!----></a> <!----></div>
+            </aside><!---->
+            <div class="flex-1 flex flex-col ml-[200px]">
+                <header class="top-header svelte-pob6cl">
+                    <div class="header-left svelte-pob6cl"><button class="back-btn svelte-pob6cl"><svg width="20"
+                                height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" fill="none"></path>
+                            </svg></button>
+                        <div class="logo svelte-pob6cl">
+                            <div class="logo-icon svelte-pob6cl">T</div>
+                        </div>
+                    </div>
+                    <div class="header-center svelte-pob6cl"><button class="search-btn svelte-pob6cl"><svg width="18"
+                                height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+                                <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round"></path>
+                            </svg> <span class="svelte-pob6cl">Suche &amp; Quick-Actions</span> <kbd
+                                class="kbd svelte-pob6cl"><span class="svelte-pob6cl">STRG</span> <span
+                                    class="svelte-pob6cl">K</span></kbd></button></div>
+                    <div class="header-right svelte-pob6cl">
+                        <div class="view-mode-switch svelte-rphjn1"><button class="switch-btn svelte-rphjn1"
+                                title="Ansicht wechseln"><svg width="20" height="20" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M10 2a4 4 0 100 8 4 4 0 000-8zm0 10c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z">
+                                    </path>
+                                </svg> <span>Mitarbeiter</span><!----> <svg class="switch-icon svelte-rphjn1" width="16"
+                                    height="16" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M8 3v10M5 6l3-3 3 3M5 10l3 3 3-3" stroke="currentColor" stroke-width="1.5"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></button></div> <!----><!----> <button class="icon-btn svelte-pob6cl"><svg
+                                width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+                                <rect x="11" y="3" width="6" height="6" rx="1"></rect>
+                                <rect x="3" y="11" width="6" height="6" rx="1"></rect>
+                                <rect x="11" y="11" width="6" height="6" rx="1"></rect>
+                            </svg></button> <button class="icon-btn svelte-pob6cl">🌙<!----></button> <button
+                            class="icon-btn svelte-pob6cl"><svg width="20" height="20" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M10 10c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4">
+                                </path>
+                            </svg></button>
+                    </div>
+                </header><!---->
+                <main class="flex-1 w-full mt-16 min-h-[calc(100vh-64px)] svelte-1n46o8q">
+                    <div class="page-container svelte-1pkzqb4">
+                        <div class="page-header svelte-1pkzqb4">
+                            <h1 class="page-title svelte-1pkzqb4">Budgetplanung <!----></h1> <button
+                                class="btn-new-budget svelte-1pkzqb4"><svg width="20" height="20" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path d="M10 3v14M3 10h14" stroke="white" stroke-width="2" stroke-linecap="round">
+                                    </path>
+                                </svg> Neues Budget</button><!---->
+                        </div>
+                        <div class="page-content svelte-1pkzqb4"><!----><!---->
+                            <div class="chart-container svelte-1pkzqb4">
+                                <div class="chart-header svelte-1pkzqb4">
+                                    <h2 class="svelte-1pkzqb4">Übersicht aller Budgets</h2>
+                                </div>
+                                <div class="chart-wrapper svelte-1pkzqb4"><canvas height="450"
+                                        style="display: block; box-sizing: border-box; height: 300px; width: 450px;"
+                                        width="675"></canvas></div>
+                            </div>
+                            <div class="table-container svelte-1pkzqb4">
+                                <table class="budget-table svelte-1pkzqb4">
+                                    <thead class="svelte-1pkzqb4">
+                                        <tr>
+                                            <th class="svelte-1pkzqb4">Name</th>
+                                            <th class="svelte-1pkzqb4">Beschreibung</th>
+                                            <th class="svelte-1pkzqb4">Zeitraum</th>
+                                            <th class="svelte-1pkzqb4">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="budget-row svelte-1pkzqb4">
+                                            <td class="budget-name svelte-1pkzqb4">asdasd</td>
+                                            <td class="budget-description svelte-1pkzqb4">testasd</td>
+                                            <td class="budget-period svelte-1pkzqb4">2.10.2025 - 9.10.2025</td>
+                                            <td class="svelte-1pkzqb4"><span
+                                                    class="status-badge bg-gray-200 text-gray-800 svelte-1pkzqb4">Entwurf</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!---->
+                        </div>
+                    </div> <button title="Gelöschte Budgets wiederherstellen"
+                        class="floating-restore-btn svelte-1gq2sjx has-items"><svg width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M13 3a9 9 0 00-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21a9 9 0 000-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z">
+                            </path>
+                        </svg> <span class="badge-count svelte-1gq2sjx">1</span><!----></button> <!----><!----><!---->
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

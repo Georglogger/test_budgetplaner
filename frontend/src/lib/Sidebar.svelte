@@ -1,5 +1,10 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+
   export let currentRoute = 'planning';
+  export let sidebarOpen = false;
+
+  const dispatch = createEventDispatcher();
 
   const menuItems = [
     { id: 'planning', icon: '📊', label: 'Planung', route: '#/' },
@@ -21,16 +26,27 @@
     }
     expandedItems = expandedItems;
   }
+
+  function handleMenuClick() {
+    // Close sidebar on mobile when menu item is clicked
+    dispatch('closeSidebar');
+  }
 </script>
 
-<aside class="sidebar">
+<aside class="sidebar" class:open={sidebarOpen}>
   <div class="sidebar-content">
     {#each menuItems as item}
       <a
         href={item.route}
         class="menu-item"
         class:active={currentRoute === item.id}
-        on:click={() => item.hasSubmenu && toggleItem(item.id)}
+        on:click={(e) => {
+          if (item.hasSubmenu) {
+            toggleItem(item.id);
+          } else {
+            handleMenuClick();
+          }
+        }}
       >
         <span class="menu-icon">{item.icon}</span>
         <span class="menu-label">{item.label}</span>
@@ -43,7 +59,7 @@
 
       {#if item.hasSubmenu && expandedItems.has(item.id)}
         <div class="submenu">
-          <a href="#/personal/employees" class="submenu-item">
+          <a href="#/personal/employees" class="submenu-item" on:click={handleMenuClick}>
             <span class="menu-icon">👥</span>
             <span class="menu-label">Personal</span>
           </a>
@@ -65,6 +81,18 @@
     left: 0;
     top: 0;
     transition: all 0.3s ease;
+    z-index: 50;
+  }
+
+  /* Mobile: Hide sidebar by default */
+  @media (max-width: 1023px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
   }
 
   :global(.dark) .sidebar {

@@ -219,10 +219,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0 1.5rem 2rem;
+    padding: 1rem;
     background: white;
     border-bottom: 1px solid #e5e7eb;
     flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .page-header {
+      padding: 1.5rem 0 1.5rem 2rem;
+    }
   }
 
   :global(.dark) .page-header {
@@ -231,12 +237,20 @@
   }
 
   .page-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #1a202c;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      font-size: 1.5rem;
+      gap: 1rem;
+    }
   }
 
   :global(.dark) .page-title {
@@ -262,8 +276,8 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0;
     background: #7c3aed;
     color: white;
     border: none;
@@ -272,6 +286,14 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 768px) {
+    .btn-new-budget {
+      padding: 0.75rem 1.5rem;
+      margin-right: 2rem;
+    }
   }
 
   .btn-new-budget:hover {
@@ -283,6 +305,8 @@
     overflow-y: auto;
     padding: 0;
     background: #f9fafb;
+    display: flex;
+    flex-direction: column;
   }
 
   :global(.dark) .page-content {
@@ -339,11 +363,14 @@
   .chart-container {
     background: white;
     border-radius: 0;
-    padding: 2rem 0 2rem 2rem;
-    margin-bottom: 0;
-    margin-right: 0;
+    padding: 2rem 0;
+    margin: 0;
     box-shadow: none;
     border-bottom: 1px solid #e5e7eb;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
   }
 
   :global(.dark) .chart-container {
@@ -353,13 +380,28 @@
   }
 
   .chart-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .chart-header {
+      margin-bottom: 1.5rem;
+      padding: 0 2rem;
+    }
   }
 
   .chart-header h2 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: #1a202c;
+  }
+
+  @media (min-width: 768px) {
+    .chart-header h2 {
+      font-size: 1.25rem;
+    }
   }
 
   :global(.dark) .chart-header h2 {
@@ -367,8 +409,10 @@
   }
 
   .chart-wrapper {
-    height: 300px;
+    flex: 1;
     position: relative;
+    padding: 0;
+    min-height: 0;
   }
 
   /* Table Section */
@@ -376,7 +420,7 @@
     background: white;
     border-radius: 0;
     overflow: hidden;
-    margin-right: 0;
+    margin: 0;
     box-shadow: none;
   }
 
@@ -401,9 +445,9 @@
   }
 
   .budget-table th {
-    padding: 1rem 0 1rem 2rem;
+    padding: 0.75rem 1rem;
     text-align: left;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: #64748b;
     text-transform: uppercase;
@@ -411,7 +455,18 @@
   }
 
   .budget-table th:first-child {
-    padding-left: 2rem;
+    padding-left: 0;
+  }
+
+  .budget-table th:last-child {
+    padding-right: 0;
+  }
+
+  @media (min-width: 768px) {
+    .budget-table th {
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+    }
   }
 
   :global(.dark) .budget-table th {
@@ -437,13 +492,24 @@
   }
 
   .budget-table td {
-    padding: 1rem 0 1rem 2rem;
-    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.813rem;
     color: #1a202c;
   }
 
   .budget-table td:first-child {
-    padding-left: 2rem;
+    padding-left: 0;
+  }
+
+  .budget-table td:last-child {
+    padding-right: 0;
+  }
+
+  @media (min-width: 768px) {
+    .budget-table td {
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+    }
   }
 
   :global(.dark) .budget-table td {
