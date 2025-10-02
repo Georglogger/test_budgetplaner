@@ -1,0 +1,15 @@
+category,subcategory,amount,date
+Personal,Gehälter,45000.00,2025-01-15
+Personal,Gehälter,45000.00,2025-02-15
+Personal,Sozialabgaben,12000.00,2025-01-15
+Personal,Sozialabgaben,12000.00,2025-02-15
+Marketing,Online-Werbung,5000.00,2025-01-10
+Marketing,Online-Werbung,6500.00,2025-02-10
+Marketing,Events,8000.00,2025-01-20
+IT,Software-Lizenzen,3500.00,2025-01-05
+IT,Software-Lizenzen,3500.00,2025-02-05
+IT,Hardware,2500.00,2025-01-12
+Büro,Miete,4000.00,2025-01-01
+Büro,Miete,4000.00,2025-02-01
+Büro,Büromaterial,500.00,2025-01-08
+Büro,Büromaterial,450.00,2025-02-08
